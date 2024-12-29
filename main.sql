@@ -118,13 +118,14 @@ WHERE Employees.department_id IS NULL;
 
 exc.18
 ---
-SELECT COUNT (name) FROM Employees;
+SELECT Employees.department_id, COUNT (Employees.name) FROM Employees
+GROUP BY Employees.department_id;
 ---
 
 exc.19
 ---
 SELECT Employees.*, AVG(salary) FROM Employees
-GROUP BY Employees.employee_id;
+GROUP BY Employees.department_id;
 ---
 
 exc.20
